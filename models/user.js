@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var userData = sequelize.define("userData", {
+  var User = sequelize.define("User", {
       userName: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -28,5 +28,25 @@ module.exports = function(sequelize, DataTypes) {
               len: [300]
           }
       },
-  }); return Post; 
-}
+      gender: {
+          type: DataTypes.STRING,
+          defaultValue: "N/A",
+      },
+      location: {
+          type: DataTypes.STRING,
+          allowNull: false, 
+      },
+      movieList: {
+          type: DataTypes.STRING
+      },
+      profilePic: {
+          type: DataTypes.STRING
+      }
+  }); 
+  User.associate = function(models) {
+    models.User.hasMany(models.User, {
+        onDelete: "cascade"
+    });
+  };
+  return User; 
+};
