@@ -11,7 +11,7 @@ module.exports = function(app){
 
     //assuming handlebars starts to work right, this should render the main html page.
     app.get('/',function(req,res){
-        res.render('index');
+        res.render('login');
     })
 
 

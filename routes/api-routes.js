@@ -18,6 +18,13 @@ module.exports = function(app){
     //be able to add new user to the database.
     app.post('/api/user', function(req,res){
 
+        //check username, password, age, gender, location, profile picture
+
+        //if everything is filled out, the total expression should be false. If something is blank, it
+        if ((!gender) || (!age) || (!location) || (!password) || (!username) ){
+
+
+        }
     })
 
 
