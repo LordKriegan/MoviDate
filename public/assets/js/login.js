@@ -28,11 +28,11 @@ window.onload = function() {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = position.coords.latitude + "," + position.coords.longitude
                 axios.post("/api/createUser", {
-                    userName: $("#signUpUn").val.trim(),
-                    password: $("#signUpPw").val.trim(),
-                    age: $("#signUpAge").val.trim(),
-                    description: $("#signUpDesc").val.trim(),
-                    gender: $("#signUpGender").val.trim(),
+                    userName: $("#signUpUn").val().trim(),
+                    password: $("#signUpPw").val().trim(),
+                    age: $("#signUpAge").val().trim(),
+                    description: $("#signUpDesc").val().trim(),
+                    gender: $("#signUpGender").val().trim(),
                     location: pos
                 }).then(function(response) {
                     console.log(response);
