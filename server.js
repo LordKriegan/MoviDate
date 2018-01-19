@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var db = require('./models')
+
 
 
 //requiring handlesbars
@@ -34,7 +36,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 require('./routes/html-routes')(app);
 
 
-app.listen(PORT, function(err){
-    if (err) throw err;
-    console.log('listening on port: '+PORT)
+db.sequelize.sync({force:true}).then(function(){
+    app.listen(PORT, function(err){
+        if (err) throw err;
+        console.log('listening on port: '+PORT)
+    })
 })

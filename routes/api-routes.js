@@ -14,22 +14,41 @@ module.exports = function(app){
 
     })
 
+    //Login user
+    app.post('/api/loginUser',function(req,res){
+
+        if ((req.body.password) && (req.body.userName) ){
+
+            
+        }
+        
+
+    })
+
 
     //be able to add new user to the database.
-    app.post('/api/user', function(req,res){
 
+    app.post('/api/createUser', function(req,res){
         //check username, password, age, gender, location, profile picture
 
         //if everything is filled out, the total expression should be false. If something is blank, it should 
-        // if ((!gender) || (!age) || (!location) || (!password) || (!username) ){
-            //bad user input
+        if ((req.body.password) && (req.body.userName) ){
+            db.User.create({
+                userName: req.body.userName,
+                password: req.body.password,
+                age: req.body.age,
+                gender: req.body.gender,
+                description: req.body.description,
+                location: res.body.location
+            }).then(function(dbData){
+                res.json(dbData);
+            })
 
+        }
 
-        // }
-
-        // else {
-        //     //good user input
-        // }
+        else {
+            res.status(400).send('Username or Password missing')
+        }
     })
 
 
