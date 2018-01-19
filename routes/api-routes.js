@@ -19,7 +19,20 @@ module.exports = function(app){
 
         if ((req.body.password) && (req.body.userName) ){
 
-            
+            db.User.findOne({
+                where: {
+                    userName: req.body.userName
+                }
+            }).then(function(dbData){
+                if (req.body.password === dbData.password){
+
+                    res.status(200).send('Authentication successful.')
+                }
+                else{
+                    res.status(400).send('Authentication failed.')
+                }
+            })
+
         }
         
 
