@@ -20,11 +20,16 @@ module.exports = function(app){
 
         //check username, password, age, gender, location, profile picture
 
-        //if everything is filled out, the total expression should be false. If something is blank, it
-        if ((!gender) || (!age) || (!location) || (!password) || (!username) ){
+        //if everything is filled out, the total expression should be false. If something is blank, it should 
+        // if ((!gender) || (!age) || (!location) || (!password) || (!username) ){
+            //bad user input
 
 
-        }
+        // }
+
+        // else {
+        //     //good user input
+        // }
     })
 
 
