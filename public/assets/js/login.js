@@ -10,4 +10,7 @@ window.onload = function() {
         $("#loginForm").css("display", "none");
         $("#signUpForm").css("display", "block");
     });
+
+
+
 }
