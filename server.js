@@ -34,6 +34,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //require('./routes/api-routes')(app);
 require('./routes/html-routes')(app);
+require('./routes/api-routes')(app);
+require('./routes/auth-routes')(app);
+
 
 
 db.sequelize.sync({force:true}).then(function(){
