@@ -1,0 +1,72 @@
+#signUpForm {
+    display: none;
+}
+
+#movieSearchBox, #userMovieBox, #nearbyUsersBox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+    padding: 10px;
+    border-style: none groove groove none;
+	border-width: 5px;
+	border-radius: 25px;
+	border-color: grey;
+}
+
+.moviePosterPic, .nearbyUserPic {
+    height: 200px;
+    width: 100px;
+}
+
+.moviePosterTitle, .nearbyUserName {
+    width: 100px;
+}
+.moviePoster, .userMovie, .nearbyUser {
+    padding: 10px;
+    display: inline-block;
+    width: min-width;
+}
+
+.moviePoster:hover, .userMovie:hover, .nearbyUser:hover {
+    box-shadow: 10px 5px 5px rgb(133, 132, 132);
+}
+
+#chatRoomBox, #chatList {
+    padding: 5px;
+    border-style: double;
+    border-radius: 5%;
+    height: 90vh;
+}
+
+#chatRoomBox {
+    height: 80vh;
+    margin-bottom: 20px;
+}
+
+.chatListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.chatListPic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.chatListName {
+    line-height: 50px
+}
+
+.myChats {
+    display: flex;
+    flex-direction: row;
+}
+
+.theirChats {
+    display: flex;
+    flex-direction: row-reverse;
+}
