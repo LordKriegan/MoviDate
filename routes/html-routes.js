@@ -6,6 +6,8 @@
 var db = require('../models')
 
 
+
+
 module.exports = function(app){
 
 
@@ -13,6 +15,15 @@ module.exports = function(app){
     app.get('/',function(req,res){
         res.render('login');
     })
+
+    //It should essentially just render the next pages
+    // app.get('/',function(req,res){
+    //     res.render('login');
+    // })
+
+    // app.get('/',function(req,res){
+    //     res.render('login');
+    // })
 
 
 }
